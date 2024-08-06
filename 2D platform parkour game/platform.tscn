@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgsojov2pol4h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xfow"]
+size = Vector2(285, 22)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(264.5, 69)
+shape = SubResource("RectangleShape2D_0xfow")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 122.0
+offset_top = 52.0
+offset_right = 408.0
+offset_bottom = 82.0
