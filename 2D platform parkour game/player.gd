@@ -29,4 +29,6 @@ func _physics_process(delta):
 
 
 
-
+func _win(area):
+	if area.has_meta("door"):
+			get_tree().change_scene_to_file("res://win.tscn") 

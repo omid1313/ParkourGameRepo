@@ -59,7 +59,7 @@ offset_right = 1153.0
 offset_bottom = 654.0
 
 [node name="Images" type="Sprite2D" parent="."]
-position = Vector2(584, 303)
+position = Vector2(575, 325)
 scale = Vector2(3.84667, 3.89881)
 texture = ExtResource("1_tlgha")
 
@@ -83,6 +83,7 @@ layer_0/tile_data = PackedInt32Array(0, 65537, 0, 65536, 65537, 0, 131072, 65537
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(176.75, 152.5)
 shape = SubResource("RectangleShape2D_j82rp")
 
@@ -112,18 +113,22 @@ position = Vector2(511.25, 36.5)
 shape = SubResource("SegmentShape2D_5xblt")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(497.5, 256)
 shape = SubResource("RectangleShape2D_i8upn")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(463.5, 73)
 shape = SubResource("RectangleShape2D_qv0ub")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(711.5, 554)
 shape = SubResource("RectangleShape2D_kouwq")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(721.5, 319.5)
 shape = SubResource("RectangleShape2D_qyr7p")
 
@@ -148,21 +153,6 @@ visible = false
 position = Vector2(5, 525)
 
 [node name="coin" parent="." instance=ExtResource("7_5u0ok")]
-position = Vector2(356, 38)
-
-[node name="coin2" parent="." instance=ExtResource("7_5u0ok")]
-position = Vector2(43, 593)
-
-[node name="coin3" parent="." instance=ExtResource("7_5u0ok")]
-position = Vector2(812, 315)
-
-[node name="coin4" parent="." instance=ExtResource("7_5u0ok")]
-position = Vector2(710, 573)
-
-[node name="coin5" parent="." instance=ExtResource("7_5u0ok")]
-position = Vector2(201, 294)
-
-[node name="coin6" parent="." instance=ExtResource("7_5u0ok")]
-position = Vector2(816, 316)
+position = Vector2(171, 98)
 
 [connection signal="body_entered" from="StaticBody2D/CollisionShape2D/StaticBody2D/CollisionShape2D3/Door" to="CharacterBody2D" method="_on_door_body_entered"]
