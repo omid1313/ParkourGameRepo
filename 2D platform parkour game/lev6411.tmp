@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://7ev57xefec8a"]
+[gd_scene load_steps=21 format=3 uid="uid://7ev57xefec8a"]
 
 [ext_resource type="Texture2D" uid="uid://bovln306vutdw" path="res://images.jpeg" id="1_tlgha"]
 [ext_resource type="Script" path="res://player.gd" id="2_5yi02"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cu40kykxypsv4" path="res://door.tscn" id="5_s3umm"]
 [ext_resource type="PackedScene" uid="uid://dgsojov2pol4h" path="res://platform.tscn" id="6_jji1p"]
 [ext_resource type="PackedScene" uid="uid://xxlnmhc6h0hp" path="res://coin.tscn" id="7_5u0ok"]
-[ext_resource type="PackedScene" uid="uid://dqideh08v7ux8" path="res://Bee.tscn" id="8_8w732"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iblfh"]
 size = Vector2(10.5, 14)
@@ -155,22 +154,3 @@ position = Vector2(1091, 53)
 
 [node name="coin" parent="." instance=ExtResource("7_5u0ok")]
 position = Vector2(152, 104)
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("8_8w732")]
-position = Vector2(509, 385)
-
-[node name="CharacterBody2D3" parent="." instance=ExtResource("8_8w732")]
-position = Vector2(779, 79)
-
-[node name="CharacterBody2D4" parent="." instance=ExtResource("8_8w732")]
-position = Vector2(163, 559)
-
-[node name="coin2" parent="." instance=ExtResource("7_5u0ok")]
-position = Vector2(104.007, 52.6414)
-scale = Vector2(nan, nan)
-
-[node name="coin3" parent="." instance=ExtResource("7_5u0ok")]
-position = Vector2(111, 599)
-
-[node name="coin4" parent="." instance=ExtResource("7_5u0ok")]
-position = Vector2(711, 573)

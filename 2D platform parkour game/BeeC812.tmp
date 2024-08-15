@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqideh08v7ux8"]
+
+[ext_resource type="Texture2D" uid="uid://wbd36equbwd0" path="res://Bee_0000_Capa-1.png" id="1_c7e2c"]
+[ext_resource type="Script" path="res://Bee.gd" id="1_gie2y"]
+[ext_resource type="Texture2D" uid="uid://cegprmfo81tel" path="res://Bee_0001_Capa-2.png" id="2_b42ck"]
+[ext_resource type="Texture2D" uid="uid://d3x7w7otj8c3f" path="res://Bee_0002_Capa-3.png" id="3_vulk7"]
+[ext_resource type="Texture2D" uid="uid://wsixu4gy4jhs" path="res://Bee_0003_Capa-4.png" id="4_2omf0"]
+[ext_resource type="Texture2D" uid="uid://bvxoyxyv3r2sy" path="res://Bee_0004_Capa-5.png" id="5_1t1fp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w07qn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c7e2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b42ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vulk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2omf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1t1fp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oc3bk"]
+size = Vector2(48, 24)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_gie2y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.555818, 0.389296)
+sprite_frames = SubResource("SpriteFrames_w07qn")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_oc3bk")

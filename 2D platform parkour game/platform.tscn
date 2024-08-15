@@ -1,7 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgsojov2pol4h"]
+[gd_scene load_steps=5 format=3 uid="uid://dgsojov2pol4h"]
+
+[ext_resource type="Texture2D" uid="uid://dxjstqilsh3u" path="res://Village tile map.png" id="1_di2g6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xfow"]
 size = Vector2(285, 22)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n0ool"]
+texture = ExtResource("1_di2g6")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hw0ws"]
+sources/0 = SubResource("TileSetAtlasSource_n0ool")
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
@@ -11,6 +23,12 @@ shape = SubResource("RectangleShape2D_0xfow")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 122.0
-offset_top = 52.0
+offset_top = 50.0
 offset_right = 408.0
-offset_bottom = 82.0
+offset_bottom = 80.0
+
+[node name="TileMap" type="TileMap" parent="ColorRect"]
+position = Vector2(-122, -50)
+tile_set = SubResource("TileSet_hw0ws")
+format = 2
+layer_0/tile_data = PackedInt32Array(262156, 65536, 0, 196620, 65536, 0, 196619, 65536, 0, 196618, 65536, 0, 196617, 65536, 0, 196616, 65536, 0, 196615, 65536, 0, 262151, 65536, 0, 262152, 65536, 0, 262153, 65536, 0, 262154, 65536, 0, 196621, 65536, 0, 196622, 65536, 0, 262158, 65536, 0, 262157, 65536, 0, 196623, 65536, 0, 262159, 65536, 0, 262160, 65536, 0, 196624, 65536, 0, 262155, 65536, 0, 196625, 65536, 0, 262161, 65536, 0, 262162, 65536, 0, 196626, 65536, 0, 262163, 65536, 0, 196627, 65536, 0, 196628, 65536, 0, 262164, 65536, 0, 262165, 65536, 0, 196629, 65536, 0, 262167, 65536, 0, 196631, 65536, 0, 196632, 65536, 0, 196633, 65536, 0, 262169, 65536, 0, 262168, 65536, 0, 196630, 65536, 0, 262166, 65536, 0)
