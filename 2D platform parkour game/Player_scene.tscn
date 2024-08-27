@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnycw55hc43fx"]
+
+[ext_resource type="Texture2D" uid="uid://bwidi5yeg271j" path="res://Redhood charecter.png" id="1_h53j2"]
+[ext_resource type="Script" path="res://Player_scene.gd" id="1_qf37e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnqda"]
+size = Vector2(18, 19)
+
+[node name="Redhood" type="CharacterBody2D"]
+script = ExtResource("1_qf37e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.20632, -2.28616)
+scale = Vector2(0.575395, 0.580385)
+texture = ExtResource("1_h53j2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -3.5)
+shape = SubResource("RectangleShape2D_fnqda")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-2, -3)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_Redhood_screen_exited"]

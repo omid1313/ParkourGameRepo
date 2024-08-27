@@ -1,29 +1,32 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqideh08v7ux8"]
+[gd_scene load_steps=10 format=3 uid="uid://dqideh08v7ux8"]
 
-[ext_resource type="Texture2D" uid="uid://dthmqwioraxjt" path="res://Bee_0000_Capa-1.png" id="1_c7e2c"]
+[ext_resource type="Texture2D" uid="uid://dthmqwioraxjt" path="res://Bee_0000_Capa-1.png" id="1_2i5ki"]
 [ext_resource type="Script" path="res://Bee.gd" id="1_gie2y"]
-[ext_resource type="Texture2D" uid="uid://fx7ebo354lqe" path="res://Bee_0001_Capa-2.png" id="2_b42ck"]
-[ext_resource type="Texture2D" uid="uid://bto4rdg3sghhr" path="res://Bee_0002_Capa-3.png" id="3_vulk7"]
-[ext_resource type="Texture2D" uid="uid://bi2kwq5i2ik42" path="res://Bee_0003_Capa-4.png" id="4_2omf0"]
-[ext_resource type="Texture2D" uid="uid://bp2rpvtyma0wn" path="res://Bee_0004_Capa-5.png" id="5_1t1fp"]
+[ext_resource type="Texture2D" uid="uid://fx7ebo354lqe" path="res://Bee_0001_Capa-2.png" id="2_8igmg"]
+[ext_resource type="Texture2D" uid="uid://bto4rdg3sghhr" path="res://Bee_0002_Capa-3.png" id="3_eekmd"]
+[ext_resource type="Texture2D" uid="uid://bi2kwq5i2ik42" path="res://Bee_0003_Capa-4.png" id="4_kamyd"]
+[ext_resource type="Texture2D" uid="uid://bp2rpvtyma0wn" path="res://Bee_0004_Capa-5.png" id="5_ou08f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldpov"]
+size = Vector2(40, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w07qn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_c7e2c")
+"texture": ExtResource("1_2i5ki")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_b42ck")
+"texture": ExtResource("2_8igmg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_vulk7")
+"texture": ExtResource("3_eekmd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_2omf0")
+"texture": ExtResource("4_kamyd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_1t1fp")
+"texture": ExtResource("5_ou08f")
 }],
 "loop": true,
 "name": &"default",
@@ -31,17 +34,28 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oc3bk"]
-size = Vector2(42, 28)
+size = Vector2(32, 20)
 
 [node name="Bee" type="CharacterBody2D"]
 script = ExtResource("1_gie2y")
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ldpov")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w07qn")
 autoplay = "default"
-frame = 3
-frame_progress = 0.0518111
+frame_progress = 0.760323
+speed_scale = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2)
+visible = false
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_oc3bk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

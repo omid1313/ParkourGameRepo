@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dxjstqilsh3u" path="res://Village tile map.png" id="1_di2g6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xfow"]
-size = Vector2(285, 22)
+size = Vector2(237.645, 16.0092)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n0ool"]
 texture = ExtResource("1_di2g6")
@@ -18,7 +18,8 @@ sources/0 = SubResource("TileSetAtlasSource_n0ool")
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(264.5, 69)
+position = Vector2(262, 65.5)
+scale = Vector2(1.30447, -2.06132)
 shape = SubResource("RectangleShape2D_0xfow")
 
 [node name="ColorRect" type="ColorRect" parent="."]

@@ -1,16 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2es3x5igcn1d"]
+[gd_scene load_steps=7 format=3 uid="uid://d2es3x5igcn1d"]
 
 [ext_resource type="Texture2D" uid="uid://dxjstqilsh3u" path="res://Village tile map.png" id="1_4oa8f"]
 [ext_resource type="PackedScene" uid="uid://dgsojov2pol4h" path="res://platform.tscn" id="2_ljp68"]
+[ext_resource type="PackedScene" uid="uid://cnycw55hc43fx" path="res://Player_scene.tscn" id="3_708a1"]
+[ext_resource type="PackedScene" uid="uid://xxlnmhc6h0hp" path="res://coin.tscn" id="4_pu0pg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oejcn"]
 texture = ExtResource("1_4oa8f")
-0:0/0 = 0
+1:0/next_alternative_id = 2
 1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
 0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
 1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_lm0gs"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_oejcn")
 
 [node name="Level 2" type="Node2D"]
@@ -18,9 +31,13 @@ sources/0 = SubResource("TileSetAtlasSource_oejcn")
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lm0gs")
 format = 2
+layer_0/tile_data = PackedInt32Array(2228231, 65536, 0, 2293769, 65536, 0, 2228232, 65536, 0, 2228233, 65536, 0, 2228236, 65536, 0)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_ljp68")]
-position = Vector2(-114, 549)
+position = Vector2(-108, 548)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("2_ljp68")]
-position = Vector2(190, 549)
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_708a1")]
+position = Vector2(11, 590)
+
+[node name="coin" parent="." instance=ExtResource("4_pu0pg")]
+position = Vector2(67, 583)
