@@ -50,7 +50,7 @@ shape = SubResource("RectangleShape2D_ldpov")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w07qn")
 autoplay = "default"
-frame_progress = 0.760323
+frame_progress = 0.0970583
 speed_scale = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
