@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://f54pxylt2fb4"]
+
+[ext_resource type="Texture2D" uid="uid://dujbsttpyq65c" path="res://fire_01.png" id="1_bofwp"]
+[ext_resource type="Texture2D" uid="uid://cxoypgr7p07lo" path="res://fire_02.png" id="2_t50te"]
+
+[sub_resource type="Gradient" id="Gradient_h0mgu"]
+offsets = PackedFloat32Array(0.0983607, 0.174863, 0.256831, 0.289617, 0.382514, 0.437158, 0.601093, 0.721311, 0.808743, 0.857924, 0.918033, 0.956284, 1)
+colors = PackedColorArray(0.968627, 0.662745, 0.0313726, 1, 0.858824, 0.176471, 0.00784314, 1, 0.654902, 0, 0, 1, 1, 1, 0.196078, 1, 1, 0.717647, 0.0705882, 1, 0.901961, 0.992157, 0, 1, 0.601093, 0.601093, 0.601093, 1, 1, 1, 0, 1, 0.808743, 0.808743, 0.808743, 1, 0.857924, 0.857924, 0.857924, 1, 0.917647, 0.968627, 0.196078, 1, 0.956863, 0.8, 0.0235294, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dwlt4"]
+gradient = SubResource("Gradient_h0mgu")
+
+[sub_resource type="Curve" id="Curve_usu6y"]
+_data = [Vector2(0.014218, 0.032967), 0.0, 0.0, 0, 0, Vector2(0.350711, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tw5hv"]
+curve = SubResource("Curve_usu6y")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v7m0f"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = 32.0
+angle_max = 32.0
+inherit_velocity_ratio = 100.0
+velocity_pivot = Vector3(1, 0, 0)
+direction = Vector3(1, -1, 0)
+spread = 50.0
+gravity = Vector3(0, -300, 0)
+linear_accel_min = 100.0
+linear_accel_max = 100.0
+scale_min = 0.1
+scale_max = 0.3
+scale_curve = SubResource("CurveTexture_tw5hv")
+color_ramp = SubResource("GradientTexture1D_dwlt4")
+
+[node name="Fire" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 0.188235, 1)
+self_modulate = Color(0.819608, 0.807843, 0, 1)
+process_material = SubResource("ParticleProcessMaterial_v7m0f")
+texture = ExtResource("1_bofwp")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 0.188235, 1)
+self_modulate = Color(0.819608, 0.807843, 0, 1)
+process_material = SubResource("ParticleProcessMaterial_v7m0f")
+texture = ExtResource("2_t50te")
