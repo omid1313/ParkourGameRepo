@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8655jmvyf1kp"]
+
+[ext_resource type="Texture2D" uid="uid://dy3r8or7wktqn" path="res://Win.png" id="1_4xucb"]
+[ext_resource type="Script" path="res://Winscene.gd" id="1_08gui"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uberq"]
+texture = ExtResource("1_4xucb")
+modulate_color = Color(0.721569, 0.721569, 0.721569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vevu2"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vj3o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svavg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfmoc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1296.0
+offset_bottom = 664.0
+script = ExtResource("1_08gui")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1261.0
+offset_bottom = 658.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_uberq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 141.0
+offset_right = 869.0
+offset_bottom = 279.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/font_size = 90
+text = "YOU WIN!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 374.0
+offset_right = 514.0
+offset_bottom = 462.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vevu2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1vj3o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_svavg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lfmoc")
+text = "Return "
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 761.0
+offset_top = 373.0
+offset_right = 1056.0
+offset_bottom = 461.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vevu2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1vj3o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_svavg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lfmoc")
+text = "Exit"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

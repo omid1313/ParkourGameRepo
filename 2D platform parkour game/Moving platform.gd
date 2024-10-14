@@ -1,8 +1,9 @@
 extends Path2D
 
 @export var loop = true
-@export var speed = 1.0
+@export var speed = 0.01
 @export var speed_scale = 1.0
+var reverse = false
 
 @onready var path = $PathFollow2D
 @onready var animation =$AnimationPlayer
@@ -19,4 +20,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	path.progress +=speed
+	if not reverse:
+		path.progress_ratio += speed
+		if path.progress_ratio >= 0.98:
+			reverse = true
+	elif reverse:
+		path.progress_ratio -= speed
+		if path.progress_ratio <= 0.02:
+			reverse = false

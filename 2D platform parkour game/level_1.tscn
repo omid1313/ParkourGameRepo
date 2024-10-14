@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7ev57xefec8a"]
+[gd_scene load_steps=16 format=3 uid="uid://7ev57xefec8a"]
 
 [ext_resource type="Texture2D" uid="uid://bovln306vutdw" path="res://images.jpeg" id="1_tlgha"]
 [ext_resource type="Texture2D" uid="uid://dxjstqilsh3u" path="res://Village tile map.png" id="4_l4kkd"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dgsojov2pol4h" path="res://platform.tscn" id="6_jji1p"]
 [ext_resource type="PackedScene" uid="uid://xxlnmhc6h0hp" path="res://coin.tscn" id="7_5u0ok"]
 [ext_resource type="PackedScene" uid="uid://dqideh08v7ux8" path="res://Bee.tscn" id="8_8w732"]
+[ext_resource type="PackedScene" uid="uid://5lik8smkx7gv" path="res://coincounter.tscn" id="8_ff151"]
 [ext_resource type="PackedScene" uid="uid://f54pxylt2fb4" path="res://fire.tscn" id="8_tk5u2"]
 [ext_resource type="PackedScene" uid="uid://cnycw55hc43fx" path="res://Player_scene.tscn" id="9_xo1tn"]
 
@@ -44,15 +45,7 @@ size = Vector2(161, 29)
 [node name="Level 1" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-401.0]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -648.0
-offset_right = 1155.0
-grow_vertical = 0
+[node name="CanvasLayer2" parent="." instance=ExtResource("8_ff151")]
 
 [node name="Button" type="Button" parent="."]
 offset_left = 931.0
@@ -133,7 +126,7 @@ position = Vector2(712, 578)
 position = Vector2(573, 124)
 
 [node name="player" parent="." instance=ExtResource("9_xo1tn")]
-position = Vector2(941, 81)
+position = Vector2(74, 595)
 
 [node name="Bee2" parent="." instance=ExtResource("8_8w732")]
 position = Vector2(489, 398)

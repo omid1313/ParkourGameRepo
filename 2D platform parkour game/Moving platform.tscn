@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Moving platform.gd" id="1_7mwgp"]
 [ext_resource type="Texture2D" uid="uid://ba3navj2kbup5" path="res://PLatform.png" id="1_oq5d4"]
 
-[sub_resource type="Curve2D" id="Curve2D_7gk8n"]
+[sub_resource type="Curve2D" id="Curve2D_bbyeu"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 470, 13, 0, 0, 0, 0, 667, 12, 0, 0, 0, 0, 461, 18)
+"points": PackedVector2Array(0, 0, 0, 0, 482, 17, 0, 0, 0, 0, 684, 19)
 }
-point_count = 3
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gltqg"]
 size = Vector2(90.0018, 14.9675)
@@ -51,20 +51,19 @@ _data = {
 }
 
 [node name="Path2D" type="Path2D"]
-curve = SubResource("Curve2D_7gk8n")
+curve = SubResource("Curve2D_bbyeu")
 script = ExtResource("1_7mwgp")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(471.199, 12.9939)
-rotation = -0.0050761
-progress = 1.33555
+position = Vector2(482, 17)
+rotation = 0.00990067
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(471.199, 12.9939)
-rotation = -0.0050761
+position = Vector2(482, 17)
+rotation = 0.00990067
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 position = Vector2(4.98782, 6.01013)
