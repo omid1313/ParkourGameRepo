@@ -17,7 +17,6 @@ func _ready():
 		animation.speed_scale = speed_scale
 		set_process(false)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not reverse:

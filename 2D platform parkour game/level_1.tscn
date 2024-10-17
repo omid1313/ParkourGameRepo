@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://7ev57xefec8a"]
+[gd_scene load_steps=17 format=3 uid="uid://7ev57xefec8a"]
 
 [ext_resource type="Texture2D" uid="uid://bovln306vutdw" path="res://images.jpeg" id="1_tlgha"]
 [ext_resource type="Texture2D" uid="uid://dxjstqilsh3u" path="res://Village tile map.png" id="4_l4kkd"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://5lik8smkx7gv" path="res://coincounter.tscn" id="8_ff151"]
 [ext_resource type="PackedScene" uid="uid://f54pxylt2fb4" path="res://fire.tscn" id="8_tk5u2"]
 [ext_resource type="PackedScene" uid="uid://cnycw55hc43fx" path="res://Player_scene.tscn" id="9_xo1tn"]
+[ext_resource type="PackedScene" uid="uid://ctktwpmt1hqef" path="res://timer.tscn" id="10_jc1a4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mys8c"]
 texture = ExtResource("4_l4kkd")
@@ -103,10 +104,6 @@ position = Vector2(258, 364)
 visible = false
 position = Vector2(821, 461)
 
-[node name="StaticBody2D6" parent="." instance=ExtResource("6_jji1p")]
-visible = false
-position = Vector2(-1, 527)
-
 [node name="Door" parent="." instance=ExtResource("5_s3umm")]
 position = Vector2(1027, 115)
 
@@ -119,14 +116,11 @@ position = Vector2(786, 72)
 [node name="CharacterBody2D4" parent="." instance=ExtResource("8_8w732")]
 position = Vector2(163, 559)
 
-[node name="coin4" parent="." instance=ExtResource("7_5u0ok")]
-position = Vector2(712, 578)
-
 [node name="Bee" parent="." instance=ExtResource("8_8w732")]
 position = Vector2(573, 124)
 
 [node name="player" parent="." instance=ExtResource("9_xo1tn")]
-position = Vector2(74, 595)
+position = Vector2(63, 595)
 
 [node name="Bee2" parent="." instance=ExtResource("8_8w732")]
 position = Vector2(489, 398)
@@ -134,17 +128,27 @@ position = Vector2(489, 398)
 [node name="Bee3" parent="." instance=ExtResource("8_8w732")]
 position = Vector2(436, 173)
 
-[node name="coin5" parent="." instance=ExtResource("7_5u0ok")]
-position = Vector2(77, 147)
-
-[node name="coin6" parent="." instance=ExtResource("7_5u0ok")]
-position = Vector2(103, 368)
-
 [node name="coin" parent="." instance=ExtResource("7_5u0ok")]
 position = Vector2(816, 320)
+
+[node name="coin2" parent="." instance=ExtResource("7_5u0ok")]
+position = Vector2(91, 371)
+
+[node name="coin3" parent="." instance=ExtResource("7_5u0ok")]
+position = Vector2(83, 143)
+
+[node name="coin4" parent="." instance=ExtResource("7_5u0ok")]
+position = Vector2(713, 573)
 
 [node name="Fire" parent="." instance=ExtResource("8_tk5u2")]
 visible = false
 position = Vector2(832, 594)
 
+[node name="Node2D" parent="." instance=ExtResource("10_jc1a4")]
+position = Vector2(50, 86)
+
 [connection signal="pressed" from="Button" to="player" method="_on_button_pressed"]
+[connection signal="body_entered" from="coin" to="CanvasLayer2" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="coin2" to="CanvasLayer2" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="coin3" to="CanvasLayer2" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="coin4" to="CanvasLayer2" method="_on_coin_body_entered"]

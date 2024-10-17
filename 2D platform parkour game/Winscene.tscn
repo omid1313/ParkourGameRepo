@@ -37,10 +37,11 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_uberq")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 398.0
-offset_top = 141.0
-offset_right = 869.0
-offset_bottom = 279.0
+offset_left = 390.0
+offset_top = 135.0
+offset_right = 861.0
+offset_bottom = 273.0
+theme_override_colors/font_color = Color(0.945098, 0.917647, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 5
 theme_override_font_sizes/font_size = 90
