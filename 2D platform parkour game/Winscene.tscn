@@ -83,5 +83,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_svavg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lfmoc")
 text = "Exit"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_exit_pressed"]

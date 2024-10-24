@@ -10,15 +10,18 @@ var reverse = false
 
 
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
+# Plays the "move" animation once and stops processing if not looping.
 	if not loop:
 		animation.play("move")
 		animation.speed_scale = speed_scale
 		set_process(false)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
 func _process(delta):
+# Moves the platform along the path, switching direction when it reaches the ends
 	if not reverse:
 		path.progress_ratio += speed
 		if path.progress_ratio >= 0.98:

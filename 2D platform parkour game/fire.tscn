@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://f54pxylt2fb4"]
+[gd_scene load_steps=9 format=3 uid="uid://f54pxylt2fb4"]
 
+[ext_resource type="Script" path="res://fire.gd" id="1_1ciod"]
 [ext_resource type="Texture2D" uid="uid://dujbsttpyq65c" path="res://fire_01.png" id="1_bofwp"]
-[ext_resource type="Texture2D" uid="uid://cxoypgr7p07lo" path="res://fire_02.png" id="2_t50te"]
 
 [sub_resource type="Gradient" id="Gradient_h0mgu"]
 offsets = PackedFloat32Array(0.0983607, 0.174863, 0.256831, 0.289617, 0.382514, 0.437158, 0.601093, 0.721311, 0.808743, 0.857924, 0.918033, 0.956284, 1)
@@ -35,16 +35,27 @@ scale_max = 0.3
 scale_curve = SubResource("CurveTexture_tw5hv")
 color_ramp = SubResource("GradientTexture1D_dwlt4")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4xe8o"]
+radius = 17.0
+height = 168.0
+
 [node name="Fire" type="Node2D"]
+script = ExtResource("1_1ciod")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 modulate = Color(1, 1, 0.188235, 1)
 self_modulate = Color(0.819608, 0.807843, 0, 1)
+amount = 10
 process_material = SubResource("ParticleProcessMaterial_v7m0f")
 texture = ExtResource("1_bofwp")
 
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
-modulate = Color(1, 1, 0.188235, 1)
-self_modulate = Color(0.819608, 0.807843, 0, 1)
-process_material = SubResource("ParticleProcessMaterial_v7m0f")
-texture = ExtResource("2_t50te")
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0, -90)
+shape = SubResource("CapsuleShape2D_4xe8o")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_die_entered"]

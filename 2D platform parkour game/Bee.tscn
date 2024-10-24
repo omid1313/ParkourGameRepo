@@ -19,7 +19,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_8igmg")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("3_eekmd")
 }, {
 "duration": 1.0,
@@ -51,7 +51,7 @@ position = Vector2(0.25, 0.5)
 scale = Vector2(0.987805, 0.96875)
 sprite_frames = SubResource("SpriteFrames_w07qn")
 autoplay = "default"
-frame_progress = 0.0970583
+frame_progress = 0.611275
 speed_scale = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -59,4 +59,4 @@ visible = false
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_oc3bk")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on__body_die_entered"]
